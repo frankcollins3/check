@@ -1,4 +1,3 @@
-import { objectKeysFunc, objectValuesFunc, nonGenericObjectKeysFunc, nonGenericObjectValsFunc } from "../Interface/interfaceHelperFuncs"
 import crypto from "crypto"
 import { dayMonthYearINTERFACE } from "Interface/InterfaceTypes"
 
@@ -14,20 +13,6 @@ import { dayMonthYearINTERFACE } from "Interface/InterfaceTypes"
 // |-- ...
 
 export function findStrainFromAllStrains(strainToFind:any, allStrains:any) { return allStrains.find(s => s.strain === strainToFind) }
-
-export function keysAndValuesFromStrain (strain:any) {
-    const keys = objectKeysFunc(strain)
-    const values = objectValuesFunc(strain)
-    const keyValStrainObj = { strainKeys: keys, strainValues: values }
-    return keyValStrainObj
-}
-
-export function nonGenericKeysAndValuesFromStrain (strain:any) {
-    const keys = nonGenericObjectKeysFunc(strain)
-    const values = nonGenericObjectValsFunc(strain)
-    const keyValStrainObj = { strainKeys: keys, strainValues: values }
-    return keyValStrainObj
-}
 
 export function nothing () {return}
 
