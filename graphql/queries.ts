@@ -2,9 +2,6 @@
 // given:                schema.ts & resolvers.ts           the AI can make queries.ts (basically make params from args)
 // possibly uses puppeteeer to scrape that text and to write to the containers.
 
-import { UsersIDnUsernameINTERFACE } from "Interface/InterfaceTypes"
-
-
 // journall:
    export const allUsersGETquery = `query { allUsersGET { id, username, icon, email, joinday }}`
    export const allStarsGETquery = `query { allStarsGET { id, day_id, user_id, username, user_profile_icon, thought_id, message_id, suggestion_id, stars, timestamp, updatedAtBin }}`
