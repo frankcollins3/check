@@ -1,9 +1,0 @@
-import { 
-    SET_VIEW_SELECTED_STRAIN,
-    TOGGLE_FORGOT_PASSWORD_HOVER,
-} from 'redux/intro/introSlice';
-
-export {
-    SET_VIEW_SELECTED_STRAIN,
-    TOGGLE_FORGOT_PASSWORD_HOVER
- };
