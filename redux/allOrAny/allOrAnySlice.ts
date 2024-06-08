@@ -1,5 +1,4 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { userINTERFACE } from 'Interface/InterfaceTypes';
 
 interface AllOrAnySliceState {
   CURRENT_PAGE: string;
@@ -10,7 +9,7 @@ interface AllOrAnySliceState {
   CURRENT_LOCALE: string;
   CURRENT_LANGUAGE: string;
 
-  ALL_USERS: userINTERFACE;
+  ALL_USERS: any
   ALL_USERNAMES: string[];
   ALL_EMAILS: string[];
 
