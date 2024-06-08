@@ -5,9 +5,7 @@ import passport from "utility/passport"
 import prisma from "prisma/prismaClient"
 import { JWTsecretKeyMaker } from 'utility/utilityValues'
 import { getToday } from 'utility/utilityValues'
-import { userINTERFACE } from 'Interface/InterfaceTypes'
 import { isArrayEmpty } from 'utility/utilityValues'
-import WitsFields from 'components/Content/Days/DayDisplays/WitsFields'
 import { getUserPrivacySettingsWithUserIdQueryStringFunc } from './queries'
 import { TOGGLE_CURR_DAY_HAS_MEDIA } from 'redux/content/daySlice'
 import { startTransition } from 'react'
@@ -121,7 +119,7 @@ export const resolvers = {
     getUserWithId: async (_, args) => {
         const { id } = args;
         try {
-        const user:userINTERFACE = await prisma.users.findFirst({
+        const user:any = await prisma.users.findFirst({
             where: {
               id: id
             }
