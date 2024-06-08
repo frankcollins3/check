@@ -1,0 +1,74 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model users {
+  id            Int     @id @default(autoincrement())
+  username      String 
+  icon          String
+  password      String
+  email         String
+  age           Int
+  has_flagged   Int?
+  flagged_posts Int?
+  has_reported  Int?
+  reported_posts Int?
+  location      String?
+  gender        String?
+  orientation   String?
+  ethnicity     String?
+
+  // Define a relation field to represent the association with thoughts
+  thoughts      thoughts[]
+}
+
+model thoughts {
+  id            Int       @id @default(autoincrement())
+  user_id       Int       // This field references the 'id' field of the 'users' model
+  thought       String
+  date          String?
+  hashtag       String?
+  post_id       Int?
+  downloadable  Boolean
+  explicit      Boolean
+  is_reported   Boolean
+
+  // Define a relation field to represent the association with users
+  user          users     @relation(fields: [user_id], references: [id])
+}
+
+model fields: {
+    id        Int       @id @default(autoincrement())   [PK]
+    user_id   Int? [FK_users] this was mistake until "profile_fields". doesn't need user_id.. until now since field can be profile no post
+    day_id    Int?  [FK_days] can be optional since it could be posted with the user_id only on profile not connected to post.
+    fields    string[]      // start as ['','','','','','','','','',''] // this is the array for the title of the field.
+    check     boolean[]      // start as [false,false,false,false,false,false,false,false,false,false] this is in case user wants a checkbox.
+    text      string[]      // [''] limit characters to 50 or so.   this is the notes on the fields like if [wandswan] the songs and stuff.
+    decide_post string      // normalized version of the denormalized d&d table.
+    decide_do   string      // how the decision went today. If the decision is part of a chain of days let it be it's own table.
+    likeable    String
+    thoughts_ok String      
+    on_profile String    // yes | no whether these fields will be shown on your profile. only 1 of the fields can be such.
+    timestamp DateTime/String
+    <!-- associations to which fields belong. -->
+    user      users @relation(fields:[user_id], references: [id])
+    day       days  @relation(fields:[day_id], references: [id])
+    <!-- these below tables belong to the fields data. -->
+    like      likes[] @relation("fieldLikes")
+    share     shares[] @relation("fieldShares")     // can share from profile. also user can share 1 moment or gratitutde on their own post
+    <!-- comment   comments[] @relation("fieldComments")    -->
+    thoughts  thoughts[]? @relation("fieldThoughts")
+    d&d       d&d? @relation("fieldDecideDo")  //  create need for user_decisions table. user can have many decisions. decisions many users
+    habits    habits[]? @relation("fieldHabits")
+    values    values[]? @relation("fieldValues")        
+
+    ! ! ! ! ! ! ! ! ! ! values and habits will belong to fields and will appear as the little bottom navbar when you click fields.
+}
