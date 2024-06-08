@@ -1,9 +1,8 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { userINTERFACE, cookieTokenINTERFACE } from 'Interface/InterfaceTypes';
 
 interface currentUserSliceState {
-  CURRENT_USER: userINTERFACE;
-  CURRENT_USER_TOKEN: cookieTokenINTERFACE
+  CURRENT_USER: any;
+  CURRENT_USER_TOKEN: any
 }
 
 //   id, location_id, username, email, password, birthday, joinday, last_username_change, full_name, profile_picture,
