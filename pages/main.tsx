@@ -8,42 +8,15 @@ import { SET_CURRENT_USER } from 'redux/currentUser/currentUserSlice';
 
 // components and styles
 import Container from 'react-bootstrap/Container';
-import Days from 'components/Content/Days/Days';
-
-// utils
-import { useImage } from "Contexts/Img";
-import { useIntroFunction } from "Contexts/IntroFunctions";
-import {useContentFunction} from "Contexts/ContentFunctions";
-import { useCookieFunction } from 'Contexts/CookiesFunctions';
 import { isParamValidLocale } from 'utility/utilityValues';
 
 export default function Main ( props:any ) {      
   // console.log('Main.tsx: props', props)
 
   const dispatch = useDispatch()  
-  
-  const [touchCoin, setTouchCoin] = useState(false)
+
     // props go here and get spit out in RENDERMAIN   
 
-    const { isTodayWeekendFunc } = useContentFunction()
-    const { getAllDomainCookies, getUserTokenFromCookies, getUserTokenDetails, getCurrentUserWithCurrentUserToken } = useCookieFunction()
-
-    // const CURRENT_LANGUAGE = useSelector((state:RootState) => state.allOrAny.CURRENT_LANGUAGE)
-    
-    // if no user get user. saving in case charts & other things goes faster than expected. 
-    useEffect( () => {  
-      (async() => {                    
-          let tokenDetails = await getUserTokenDetails()
-          if (tokenDetails?.id > 0) {
-            // const currentUser = await getCurrentUserWithCurrentUserToken(tokenDetails)
-        
-            // SET_CURRENT_USER on client-effect side or client-promise side? find best place to invoke the function.
-          } else {
-            // dispatch(SET_CURR_DAY_SELECTION('need login'))
-          }
-          const isTodayWeekend = await isTodayWeekendFunc()                                        
-        })()
-    }, [])
 
     const newTest = () => {
       console.log('newTest: props', props)
