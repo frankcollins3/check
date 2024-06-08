@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+// /dojo-img/shuriken.png
+
+$greystern: rgb(100,88,88);
+$coolgrey: rgb(168, 160, 160);
+$noto: "Noto Sans", sans-serif;
+
+.navbar {
+  // overflow: hidden;
+  font-family: $noto;
+  // background-color: lighten($greystern, 50%);  /* Background color */
+  color: $greystern;
+  border-bottom: 12px solid $coolgrey;
+  // width: 100%;
+  width: 80%;
+  padding: 0 5%;
+  height: 50px;
+  border-radius: 8px;
+  border-bottom-left-radius: 18px;
+  border-bottom-right-radius: 18px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rightSideCont {
+  width: 300px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Links inside the navbar */
+.navbar a {
+  float: left;
+  display: block;
+  color: $greystern; /* Text color */
+  text-align: center;
+  padding: 14px 20px; /* Padding */
+  // border-bottom: 12px solid $coolgrey;
+  font-family: $noto;
+  text-decoration: none; /* Remove underline */
+}
+
+/* Change background color of navbar on hover */
+.navbar a:hover {
+  // background-color: #ddd; /* Hover background color */
+  color: black; /* Text color on hover */
+}
+
+#checkLogo {
+  display: flex;
+  align-self: flex-start;
+  position: relative;
+  left: -5%;
+}
+
+.navImg {
+  height: 50px; 
+  width: 50px;
+}
+
+#tipsText {
+  color: lighten($greystern, 10%);
+  margin: 0 25px; 
+}
+
+#tipsText:hover {
+  cursor: hidden;
+}
+
