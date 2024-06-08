@@ -1,5 +1,4 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { doWeFollowEachOther, doWeBlockEachOther, userINTERFACE, usernameIdIconINTERFACE, userPassDayLocksINTERFACE, thoughtsINTERFACE, starsINTERFACE } from 'Interface/InterfaceTypes';
 
 interface DaySliceState {
   //                    NEED INTERFACES BEFORE PROCEEDING THROUGH THE APP & unit tests once reading post is fully done with locks & votes.
@@ -45,13 +44,13 @@ interface DaySliceState {
     CURR_DAY_HAS_BALLOT: boolean;
 
     CURR_DAY_HAS_LOCK: boolean;
-    CURR_DAY_USERS_PASS_LOCKS: userPassDayLocksINTERFACE[],  // number being ID 
+    CURR_DAY_USERS_PASS_LOCKS: any[],  // number being ID 
     DOES_CURR_USER_PASS_LOCK: boolean;
     // might allow determinatino from posting-user as opposed to some algo that checks: [activity,other_factors] and allows yes|no trashing
     CURR_DAY_USER_PRIVACY: any;
     CURR_DAY_USERS_CAN_TRASH: string;
-    DO_WE_FOLLOW_EACH_OTHER: doWeFollowEachOther
-    DO_WE_BLOCK_EACH_OTHER: doWeBlockEachOther
+    DO_WE_FOLLOW_EACH_OTHER: {}
+    DO_WE_BLOCK_EACH_OTHER: {}
     // DO_WE_FOLLOW_EACH_OTHER: 
     
     
@@ -80,7 +79,7 @@ interface DaySliceState {
     CURR_DAY_QUESTION_IS_CLICKED: boolean;
     CURR_DAY_COMMENTING_STARS_QUESTION_CLICK_BIN: boolean[];    
     CURR_DAY_CURR_PARENT_THOUGHT: any,
-    CURR_DAY_CURR_COMMENT: thoughtsINTERFACE;
+    CURR_DAY_CURR_COMMENT: any;
     
     
     // { CURR_DAY_COMMMENTING_USERS_SHOW_CHILD_COMMENTS_BIN[index] === true && 
