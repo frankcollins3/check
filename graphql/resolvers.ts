@@ -7,7 +7,6 @@ import { JWTsecretKeyMaker } from 'utility/utilityValues'
 import { getToday } from 'utility/utilityValues'
 import { isArrayEmpty } from 'utility/utilityValues'
 import { getUserPrivacySettingsWithUserIdQueryStringFunc } from './queries'
-import { TOGGLE_CURR_DAY_HAS_MEDIA } from 'redux/content/daySlice'
 import { startTransition } from 'react'
 
 const allUsers =  prisma.users.findMany
