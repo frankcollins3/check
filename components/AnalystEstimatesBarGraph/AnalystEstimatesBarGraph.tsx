@@ -95,6 +95,9 @@ function RENDER(props:any) {
             onMouseEnter={test}
             // barCategoryGap={50} 
             // considered making pie chart with this for all the analysts but might consider different way. 
+            // institutional ownership of apple as the pie chart!
+
+            // one could also do a bootstrap card and put the graph as the card body ?              ../ 
             barGap={50} width={200} height={200} data={[analystData]}>
             <CartesianGrid strokeDasharray="20 20" />            
             <YAxis/>            
