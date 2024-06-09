@@ -88,27 +88,40 @@ function RENDER(props:any) {
     // const analystEstimate = { relativity: { estimate: 400, company: "morgan stanley" } }
 
 
-// build super basic ads platform: [bofaEstimate, morganEstimate, jp, etc] pull random component. but every 3 or so? <advertisement>
+// build super basic ads mechanism: [bofaEstimate, morganEstimate, jp, etc] pull random component. but every 3 or so? <advertisement>
+// barCategoryGap={50} 
+// considered making pie chart with this for all the analysts but might consider different way. 
+// institutional ownership of apple as the pie chart!
+
+{/* <Container id={styles.xAxisCompanyIconCont}>    
+    <img onClick={test}  className={styles.companyIcons} src={appleLogo} />            
+    <img onClick={test2}  className={styles.companyIcons} src={ANALYST_CURRENT_COMPANY || appleLogo} />            
+</Container> */}
+
     return (
         <Container id={styles.barGraphCont}>
-            <BarChart 
-            onMouseEnter={test}
-            // barCategoryGap={50} 
-            // considered making pie chart with this for all the analysts but might consider different way. 
-            // institutional ownership of apple as the pie chart!
+{/* hey is for checking that the hydration error is from the <BarChart> toolmakers not me.      // their <LineChart/> works perfectly.  also the bar chart was working fine before and chased tail for almost hour until realizing even copy-pasted code that once worked now is the SOLE cause of "hydration error"         */}
+            {/* <p> hey </p> */}
 
-            // one could also do a bootstrap card and put the graph as the card body ?              ../ 
+            <BarChart 
             barGap={50} width={200} height={200} data={[analystData]}>
             <CartesianGrid strokeDasharray="20 20" />            
             <YAxis/>            
-            {/* if apple beats estimates then green red             else red green */}
             <Bar dataKey="relativity.current" fill={isEstimateGreaterThanCurrent ? "red" : "green"} />
-            <Bar dataKey="estimate" fill={isCurrentGreaterThanEstimate ? "green" : "red"} />
+            <Bar dataKey="estimate" fill={isCurrentGreaterThanEstimate ? "green" : "red"} />                    
             </BarChart>
-            <Container id={styles.xAxisCompanyIconCont}>    
-                <img onClick={test}  className={styles.companyIcons} src={appleLogo} />            
-                <img onClick={test2}  className={styles.companyIcons} src={ANALYST_CURRENT_COMPANY || appleLogo} />            
-            </Container>
+
+{/*         git issue #13       copy-paste this code if hydration error pops up. this code once worked then caused hydratino errors. their <LineChart/> never caused one such error. */}
+        {/* <BarChart width={730} height={250} data={[analystData]}>
+        <CartesianGrid strokeDasharray="3 3" />
+        <YAxis />        
+        <Bar dataKey="pv" fill="#8884d8" />
+        <Bar dataKey="uv" fill="#82ca9d" />
+        </BarChart> */}
+
+
         </Container>
+
+        
     )
 }
