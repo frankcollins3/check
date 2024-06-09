@@ -12,8 +12,7 @@ import {useEffect, useState} from "react";
 
 
 // components and styling
-import Carousel from 'react-multi-carousel';
-import 'react-multi-carousel/lib/styles.css';
+import { Carousel } from 'react-responsive-carousel';
 import {
   Card, Container
   //  Carousel
@@ -38,6 +37,12 @@ function RENDER(props:any) {
     // this will also make Math.random() easier because logic won't be cacheing or w.e it does to often retrieve same random value.
     const [barCharData, setBarCharData] = useState()
     const analystData:any = props?.analystData;
+    const estimate:string|number = analystData?.estimate;
+    const relativity = analystData?.relativity;
+    // const currentPPS = relativity?.
+    let percentageVariance: any = Math.round((((relativity?.current - analystData?.estimate) / analystData?.estimate) * 100) * 10) / 10;
+
+
     const isEstimateGreaterThanCurrent = analystData?.estimate > analystData?.relativity.current 
     const isCurrentGreaterThanEstimate = analystData?.estimate > analystData?.relativity.current
 
@@ -81,10 +86,12 @@ function RENDER(props:any) {
     //             dispatch(SET_ANALYST_CURRENT_COMPANY(image));
     //         }
     //     });
-    
     // };
 
     const test = () => {
+        console.log('analystData', analystData)
+        console.log('estimate', estimate)
+        console.log('relativity', relativity)
     }
 
     const test2 = () => {
@@ -114,43 +121,29 @@ function RENDER(props:any) {
 
     return (
 
-      <Carousel
-  swipeable={false}
-  draggable={false}
-  showDots={true}
-  responsive={responsive}
-  ssr={true} // means to render carousel on server-side.
-  infinite={true}
-  // autoPlay={this.props.deviceType !== "mobile" ? true : false}
-  autoPlaySpeed={1000}
-  keyBoardControl={true}
-  customTransition="all .5"
-  transitionDuration={500}
-  containerClass="carousel-container"
-  removeArrowOnDeviceType={["tablet", "mobile"]}
-  // deviceType={this.props.deviceType}
-  dotListClass="custom-dot-list-style"
-  itemClass="carousel-item-padding-40-px"
->
-  <div>
-    <p> yerrrr </p>
-  </div>
-  <div>Item 2</div>
-  <div>Item 3</div>
-  <div>Item 4</div>
-</Carousel>
+      <Card onClick={test}>
+      <Card.Body>
 
-        // <div className="card" suppressHydrationWarning={true} id={styles.barGraphCont}>                
-        //             <div id={styles.cardImgTop} className="card-img-top">
-        //             <BarChart 
-        //             barGap={20} width={250} height={250} data={[analystData]}>
-        //             <CartesianGrid strokeDasharray="20 20" />            
-        //             <YAxis/>            
-        //             <Bar dataKey="relativity.current" fill={ isEstimateGreaterThanCurrent ? "red" : "green" } />
-        //             <Bar dataKey="estimate" fill={isCurrentGreaterThanEstimate ? "green" : "red"} />                    
-        //             </BarChart>      
-        //             </div>                            
-        // </div>        
+        <div className={styles.cardTitleRow}>
+        <Card.Title id={styles.analystHeaderText}> {analystData?.relativity?.company} </Card.Title>
+
+        </div>
+    
+        <div className="card" suppressHydrationWarning={true} id={styles.barGraphCont}>                
+            <div id={styles.cardImgTop} className="card-img-top">
+                    <BarChart 
+                    barGap={20} width={250} height={250} data={[analystData]}>
+                    <CartesianGrid strokeDasharray="20 20" />            
+                    <YAxis/>            
+                    <Bar dataKey="relativity.current" fill={ isEstimateGreaterThanCurrent ? "scarlet red" : "forestgreen" } />
+                    <Bar dataKey="estimate" fill={isCurrentGreaterThanEstimate ? "forestgreen" : "scarlet red"} />                    
+                    </BarChart>      
+                    </div>                            
+        </div>
+      </Card.Body>
+        <Card.Title        
+         id={styles.analystHeaderText}> {percentageVariance} </Card.Title>        
+      </Card>            
 
 
     )
