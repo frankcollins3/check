@@ -4,12 +4,20 @@ import {useEffect, useState} from "react";
   // @reduxjs/toolkit global state management
   import {useSelector, useDispatch} from 'react-redux'
   import { RootState } from 'redux/store/rootReducer';
+
   import {     
     SET_ANALYST_BARCHART_DATA, SET_ANALYST_CURRENT_COMPANY, SET_ANALYST_CURRENT_INDEX
    } from 'redux/stocks/stocksSlice';
 
+
+
 // components and styling
-import Container from "react-bootstrap/Container"
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
+import {
+  Card, Container
+  //  Carousel
+ } from "react-bootstrap"
 import styles from "./AnalystEstimatesBarGraph.module.scss"
 
 // utility
@@ -19,7 +27,7 @@ import estimateBucket from "utility/analystData"
 
 export default function AnalystEstimatesBarGraph(props:any) {
     const analystData = props.analystData;
-    return <RENDER analystData={analystData}/>
+    return <RENDER suppressHydrationWarning={true} analystData={analystData}/>
 }
 
 // have to pack:                currentAmount, analystAmount into array
@@ -77,39 +85,76 @@ function RENDER(props:any) {
     // };
 
     const test = () => {
-        console.log('analystData', analystData)
     }
 
     const test2 = () => {
-
     }
 
+    const responsive = {
+      superLargeDesktop: {
+        // the naming can be any, depends on you.
+        breakpoint: { max: 4000, min: 3000 },
+        items: 5
+      },
+      desktop: {
+        breakpoint: { max: 3000, min: 1024 },
+        items: 3
+      },
+      tablet: {
+        breakpoint: { max: 1024, min: 464 },
+        items: 2
+      },
+      mobile: {
+        breakpoint: { max: 464, min: 0 },
+        items: 1
+      }
+    };
+
     const currentData = { open: 344, company: 'apple' }
-    // const analystEstimate = { relativity: { estimate: 400, company: "morgan stanley" } }
-
-
-// build super basic ads mechanism: [bofaEstimate, morganEstimate, jp, etc] pull random component. but every 3 or so? <advertisement>
-// barCategoryGap={50} 
-// considered making pie chart with this for all the analysts but might consider different way. 
-// institutional ownership of apple as the pie chart!
-
-{/* <Container id={styles.xAxisCompanyIconCont}>    
-    <img onClick={test}  className={styles.companyIcons} src={appleLogo} />            
-    <img onClick={test2}  className={styles.companyIcons} src={ANALYST_CURRENT_COMPANY || appleLogo} />            
-</Container> */}
 
     return (
-        <Container id={styles.barGraphCont}>
-{/* hey is for checking that the hydration error is from the <BarChart> toolmakers not me.      // their <LineChart/> works perfectly.  also the bar chart was working fine before and chased tail for almost hour until realizing even copy-pasted code that once worked now is the SOLE cause of "hydration error"         */}
-            {/* <p> hey </p> */}
 
-            <BarChart 
-            barGap={50} width={200} height={200} data={[analystData]}>
-            <CartesianGrid strokeDasharray="20 20" />            
-            <YAxis/>            
-            <Bar dataKey="relativity.current" fill={isEstimateGreaterThanCurrent ? "red" : "green"} />
-            <Bar dataKey="estimate" fill={isCurrentGreaterThanEstimate ? "green" : "red"} />                    
-            </BarChart>
+      <Carousel
+  swipeable={false}
+  draggable={false}
+  showDots={true}
+  responsive={responsive}
+  ssr={true} // means to render carousel on server-side.
+  infinite={true}
+  // autoPlay={this.props.deviceType !== "mobile" ? true : false}
+  autoPlaySpeed={1000}
+  keyBoardControl={true}
+  customTransition="all .5"
+  transitionDuration={500}
+  containerClass="carousel-container"
+  removeArrowOnDeviceType={["tablet", "mobile"]}
+  // deviceType={this.props.deviceType}
+  dotListClass="custom-dot-list-style"
+  itemClass="carousel-item-padding-40-px"
+>
+  <div>
+    <p> yerrrr </p>
+  </div>
+  <div>Item 2</div>
+  <div>Item 3</div>
+  <div>Item 4</div>
+</Carousel>
+
+        // <div className="card" suppressHydrationWarning={true} id={styles.barGraphCont}>                
+        //             <div id={styles.cardImgTop} className="card-img-top">
+        //             <BarChart 
+        //             barGap={20} width={250} height={250} data={[analystData]}>
+        //             <CartesianGrid strokeDasharray="20 20" />            
+        //             <YAxis/>            
+        //             <Bar dataKey="relativity.current" fill={ isEstimateGreaterThanCurrent ? "red" : "green" } />
+        //             <Bar dataKey="estimate" fill={isCurrentGreaterThanEstimate ? "green" : "red"} />                    
+        //             </BarChart>      
+        //             </div>                            
+        // </div>        
+
+
+    )
+}
 
 {/*         git issue #13       copy-paste this code if hydration error pops up. this code once worked then caused hydratino errors. their <LineChart/> never caused one such error. */}
         {/* <BarChart width={730} height={250} data={[analystData]}>
@@ -119,9 +164,9 @@ function RENDER(props:any) {
         <Bar dataKey="uv" fill="#82ca9d" />
         </BarChart> */}
 
-
-        </Container>
-
-        
-    )
-}
+            {/* <div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="..." alt="Card image cap">
+  <div class="card-body">
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+</div> */}
