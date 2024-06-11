@@ -5,12 +5,11 @@ interface toMoneyProps {
     numberToConvert: number
 }
 
-export default function toMoney(toMoneyProps) {
+export default function ToMoneyConverter(toMoneyProps) {
     let children = toMoneyProps.children
-
     return (        
-        <div>
+        <>
             {children}
-        </div>
+        </>
     )
 }
