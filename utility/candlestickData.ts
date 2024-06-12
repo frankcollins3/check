@@ -5,75 +5,75 @@ import { candlestickINTERFACE, candlestickARRAYTYPE } from "Interface/InterfaceT
 
 // have to fix this data! it doesn't account for weekends existing lol.
 const week1:candlestickARRAYTYPE = [
-  { id: null, open: 180, high: 195, low: 170, close: 190, volume: 95432100, date: '5-1-2024', },
-  { id: null, open: 193, high: 202, low: 184, close: 198, volume: 100230123, date: '5-2-2024' },
-  { id: null, open: 195, high: 205, low: 190, close: 198, volume: 104143210, date: '5-3-2024' },
-  { id: null, open: 208, high: 208, low: 185, close: 192, volume: 980421054, date: '5-4-2024' },
-  { id: null, open: 192, high: 210, low: 180, close: 205, volume: 102350123, date: '5-5-2024' }
+  { id: null, open: 180, high: 195, low: 170, close: 190, volume: 95432100, date: '5-1-2024', company: 'Apple', ticker: 'AAPL', logo: '/img/appleLogo.png' },
+  { id: null, open: 193, high: 202, low: 184, close: 198, volume: 100230123, date: '5-2-2024', company: 'Apple', ticker: 'AAPL', logo: '/img/appleLogo.png' },
+  { id: null, open: 195, high: 205, low: 190, close: 198, volume: 104143210, date: '5-3-2024', company: 'Apple', ticker: 'AAPL', logo: '/img/appleLogo.png' },
+  { id: null, open: 208, high: 208, low: 185, close: 192, volume: 980421054, date: '5-4-2024', company: 'Apple', ticker: 'AAPL', logo: '/img/appleLogo.png' },
+  { id: null, open: 192, high: 210, low: 180, close: 205, volume: 102350123, date: '5-5-2024', company: 'Apple', ticker: 'AAPL', logo: '/img/appleLogo.png' }
 ];
 
   const week2:candlestickARRAYTYPE = [
-    { id: null, open: 192, high: 197, low: 190, close: 195, volume: 2312340, date: '5-8-2024' },
-    { id: null, open: 195, high: 200, low: 193, close: 198, volume: 3128342, date: '5-9-2024' },
-    { id: null, open: 198, high: 202, low: 196, close: 200, volume: 4100239, date: '5-10-2024' },
-    { id: null, open: 200, high: 205, low: 198, close: 203, volume: 5000123, date: '5-11-2024' },
-    { id: null, open: 203, high: 207, low: 201, close: 205, volume: 6012340, date: '5-12-2024' }
+    { id: null, open: 192, high: 197, low: 190, close: 195, volume: 2312340, date: '5-8-2024', company: 'Apple', ticker: 'AAPL', logo: '/img/appleLogo.png' },
+    { id: null, open: 195, high: 200, low: 193, close: 198, volume: 3128342, date: '5-9-2024', company: 'Apple', ticker: 'AAPL', logo: '/img/appleLogo.png' },
+    { id: null, open: 198, high: 202, low: 196, close: 200, volume: 4100239, date: '5-10-2024', company: 'Apple', ticker: 'AAPL', logo: '/img/appleLogo.png' },
+    { id: null, open: 200, high: 205, low: 198, close: 203, volume: 5000123, date: '5-11-2024', company: 'Apple', ticker: 'AAPL', logo: '/img/appleLogo.png' },
+    { id: null, open: 203, high: 207, low: 201, close: 205, volume: 6012340, date: '5-12-2024', company: 'Apple', ticker: 'AAPL', logo: '/img/appleLogo.png' }
   ];
 
   const week3:candlestickARRAYTYPE = [
-    { id: null, open: 205, high: 210, low: 203, close: 208, volume: 27012340, date: '5-15-2024' },
-    { id: null, open: 208, high: 212, low: 206, close: 210, volume: 2100123, date: '5-16-2024' },
-    { id: null, open: 212, high: 220, low: 208, close: 213, volume: 3001234, date: '5-17-2024' },
-    { id: null, open: 218, high: 220, low: 199, close: 207, volume: 3123456, date: '5-18-2024' },
-    { id: null, open: 207, high: 211, low: 204, close: 206, volume: 11234567, date: '5-19-2024' }
+    { id: null, open: 205, high: 210, low: 203, close: 208, volume: 27012340, date: '5-15-2024', company: 'Apple', ticker: 'AAPL', logo: '/img/appleLogo.png' },
+    { id: null, open: 208, high: 212, low: 206, close: 210, volume: 2100123, date: '5-16-2024', company: 'Apple', ticker: 'AAPL', logo: '/img/appleLogo.png' },
+    { id: null, open: 212, high: 220, low: 208, close: 213, volume: 3001234, date: '5-17-2024', company: 'Apple', ticker: 'AAPL', logo: '/img/appleLogo.png' },
+    { id: null, open: 218, high: 220, low: 199, close: 207, volume: 3123456, date: '5-18-2024', company: 'Apple', ticker: 'AAPL', logo: '/img/appleLogo.png' },
+    { id: null, open: 207, high: 211, low: 204, close: 206, volume: 11234567, date: '5-19-2024', company: 'Apple', ticker: 'AAPL', logo: '/img/appleLogo.png' }
   ];
 
   const week4:candlestickARRAYTYPE = [
-    { id: null, open: 206, high: 224, low: 206, close: 215, volume: 32345678, date: '5-22-2024' },
-    { id: null, open: 221, high: 230, low: 219, close: 225, volume: 43456789, date: '5-23-2024' },
-    { id: null, open: 230, high: 233, low: 227, close: 231, volume: 203289201, date: '5-24-2024' },
-    { id: null, open: 230, high: 234, low: 228, close: 230, volume: 47747493, date: '5-25-2024' },
-    { id: null, open: 228, high: 234, low: 228, close: 234, volume: 36789012, date: '5-26-2024' }
+    { id: null, open: 206, high: 224, low: 206, close: 215, volume: 32345678, date: '5-22-2024', company: 'Apple', ticker: 'AAPL', logo: '/img/appleLogo.png' },
+    { id: null, open: 221, high: 230, low: 219, close: 225, volume: 43456789, date: '5-23-2024', company: 'Apple', ticker: 'AAPL', logo: '/img/appleLogo.png' },
+    { id: null, open: 230, high: 233, low: 227, close: 231, volume: 203289201, date: '5-24-2024', company: 'Apple', ticker: 'AAPL', logo: '/img/appleLogo.png' },
+    { id: null, open: 230, high: 234, low: 228, close: 230, volume: 47747493, date: '5-25-2024', company: 'Apple', ticker: 'AAPL', logo: '/img/appleLogo.png' },
+    { id: null, open: 228, high: 234, low: 228, close: 234, volume: 36789012, date: '5-26-2024', company: 'Apple', ticker: 'AAPL', logo: '/img/appleLogo.png' }
   ];
 
   const week5:candlestickARRAYTYPE = [
-    { id: null, open: 232, high: 240, low: 232, close: 237, volume: 392345678, date: '5-27-2024' },
-    { id: null, open: 240, high: 248, low: 237, close: 247, volume: 397374893, date: '5-28-2024' },
-    { id: null, open: 255, high: 260, low: 248, close: 251, volume: 299432412, date: '5-29-2024' },
-    { id: null, open: 250, high: 260, low: 250, close: 250, volume: 198449654, date: '5-30-2024' },
-    { id: null, open: 250, high: 262, low: 250, close: 265, volume: 96789012, date: '5-31-2024' }
+    { id: null, open: 232, high: 240, low: 232, close: 237, volume: 392345678, date: '5-27-2024', company: 'Apple', ticker: 'AAPL', logo: '/img/appleLogo.png' },
+    { id: null, open: 240, high: 248, low: 237, close: 247, volume: 397374893, date: '5-28-2024', company: 'Apple', ticker: 'AAPL', logo: '/img/appleLogo.png' },
+    { id: null, open: 255, high: 260, low: 248, close: 251, volume: 299432412, date: '5-29-2024', company: 'Apple', ticker: 'AAPL', logo: '/img/appleLogo.png'},
+    { id: null, open: 250, high: 260, low: 250, close: 250, volume: 198449654, date: '5-30-2024', company: 'Apple', ticker: 'AAPL', logo: '/img/appleLogo.png' },
+    { id: null, open: 250, high: 262, low: 250, close: 265, volume: 96789012, date: '5-31-2024', company: 'Apple', ticker: 'AAPL', logo: '/img/appleLogo.png' }
   ];
 
   const week6:candlestickARRAYTYPE = [
-    { id: null, open: 268, high: 280, low: 272, close: 272, volume: 92345678, date: '6-1-2024' },
-    { id: null, open: 270, high: 270, low: 263, close: 267, volume: 97374893, date: '6-2-2024' },
-    { id: null, open: 271, high: 281, low: 271, close: 277, volume: 99432412, date: '6-3-2024' },
-    { id: null, open: 280, high: 287, low: 273, close: 283, volume: 98449654, date: '6-4-2024' },
-    { id: null, open: 290, high: 293, low: 281, close: 288, volume: 96789012, date: '6-5-2024' }
+    { id: null, open: 268, high: 280, low: 272, close: 272, volume: 92345678, date: '6-1-2024', company: 'Apple', ticker: 'AAPL', logo: '/img/appleLogo.png' },
+    { id: null, open: 270, high: 270, low: 263, close: 267, volume: 97374893, date: '6-2-2024', company: 'Apple', ticker: 'AAPL', logo: '/img/appleLogo.png'},
+    { id: null, open: 271, high: 281, low: 271, close: 277, volume: 99432412, date: '6-3-2024', company: 'Apple', ticker: 'AAPL', logo: '/img/appleLogo.png' },
+    { id: null, open: 280, high: 287, low: 273, close: 283, volume: 98449654, date: '6-4-2024', company: 'Apple', ticker: 'AAPL', logo: '/img/appleLogo.png' },
+    { id: null, open: 290, high: 293, low: 281, close: 288, volume: 96789012, date: '6-5-2024', company: 'Apple', ticker: 'AAPL', logo: '/img/appleLogo.png' }
   ];
 
   const week7:candlestickARRAYTYPE = [
-    { id: null, open: 289, high: 299, low: 287, close: 289, volume: 52345678, date: '6-6-2024' },
-    { id: null, open: 289, high: 301, low: 289, close: 289, volume: 77374893, date: '6-7-2024' },
-    { id: null, open: 289, high: 315, low: 289, close: 311, volume: 201693451, date: '6-8-2024' },
-    { id: null, open: 315, high: 322, low: 315, close: 319, volume: 42582242, date: '6-9-2024' },
-    { id: null, open: 321, high: 331, low: 321, close: 325, volume: 96789012, date: '6-10-2024' }
+    { id: null, open: 289, high: 299, low: 287, close: 289, volume: 52345678, date: '6-6-2024', company: 'Apple', ticker: 'AAPL', logo: '/img/appleLogo.png' },
+    { id: null, open: 289, high: 301, low: 289, close: 289, volume: 77374893, date: '6-7-2024', company: 'Apple', ticker: 'AAPL', logo: '/img/appleLogo.png' },
+    { id: null, open: 289, high: 315, low: 289, close: 311, volume: 201693451, date: '6-8-2024', company: 'Apple', ticker: 'AAPL', logo: '/img/appleLogo.png' },
+    { id: null, open: 315, high: 322, low: 315, close: 319, volume: 42582242, date: '6-9-2024', company: 'Apple', ticker: 'AAPL', logo: '/img/appleLogo.png' },
+    { id: null, open: 321, high: 331, low: 321, close: 325, volume: 96789012, date: '6-10-2024', company: 'Apple', ticker: 'AAPL', logo: '/img/appleLogo.png' }
   ];
   
   const week8:candlestickARRAYTYPE = [
-    { id: null, open: 330, high: 340, low: 330, close: 337, volume: 104587289, date: '6-11-2024' },
-    { id: null, open: 340, high: 353, low: 338, close: 352, volume: 112587289, date: '6-12-2024' },
-    { id: null, open: 353, high: 370, low: 353, close: 365, volume: 108587289, date: '6-13-2024' },
-    { id: null, open: 371, high: 381, low: 362, close: 368, volume: 122582242, date: '6-14-2024' },
-    { id: null, open: 370, high: 384, low: 368, close: 380, volume: 96789012, date: '6-15-2024' }
+    { id: null, open: 330, high: 340, low: 330, close: 337, volume: 104587289, date: '6-11-2024', company: 'Apple', ticker: 'AAPL', logo: '/img/appleLogo.png' },
+    { id: null, open: 340, high: 353, low: 338, close: 352, volume: 112587289, date: '6-12-2024', company: 'Apple', ticker: 'AAPL', logo: '/img/appleLogo.png' },
+    { id: null, open: 353, high: 370, low: 353, close: 365, volume: 108587289, date: '6-13-2024', company: 'Apple', ticker: 'AAPL', logo: '/img/appleLogo.png' },
+    { id: null, open: 371, high: 381, low: 362, close: 368, volume: 122582242, date: '6-14-2024', company: 'Apple', ticker: 'AAPL', logo: '/img/appleLogo.png' },
+    { id: null, open: 370, high: 384, low: 368, close: 380, volume: 96789012, date: '6-15-2024', company: 'Apple', ticker: 'AAPL', logo: '/img/appleLogo.png' }
   ];
 
   const week9:candlestickARRAYTYPE = [
-    { id: null, open: 400, high: 418, low: 390, close: 405, volume: 214587289, date: '6-16-2024' },
-    { id: null, open: 399, high: 420, low: 399, close: 412, volume: 222587289, date: '6-17-2024' },
-    { id: null, open: 415, high: 444, low: 404, close: 429, volume: 292582242, date: '6-18-2024' },
-    { id: null, open: 430, high: 448, low: 430, close: 430, volume: 408587289, date: '6-19-2024' },
-    { id: null, open: 440, high: 454, low: 434, close: 451, volume: 766789012, date: '6-20-2024' }
+    { id: null, open: 400, high: 418, low: 390, close: 405, volume: 214587289, date: '6-16-2024', company: 'Apple', ticker: 'AAPL', logo: '/img/appleLogo.png' },
+    { id: null, open: 399, high: 420, low: 399, close: 412, volume: 222587289, date: '6-17-2024', company: 'Apple', ticker: 'AAPL', logo: '/img/appleLogo.png' },
+    { id: null, open: 415, high: 444, low: 404, close: 429, volume: 292582242, date: '6-18-2024', company: 'Apple', ticker: 'AAPL', logo: '/img/appleLogo.png'},
+    { id: null, open: 430, high: 448, low: 430, close: 430, volume: 408587289, date: '6-19-2024', company: 'Apple', ticker: 'AAPL', logo: '/img/appleLogo.png' },
+    { id: null, open: 440, high: 454, low: 434, close: 451, volume: 766789012, date: '6-20-2024', company: 'Apple', ticker: 'AAPL', logo: '/img/appleLogo.png' }
   ];
 
   //
