@@ -6,7 +6,7 @@ import {useEffect, useState} from "react";
   import { RootState } from 'redux/store/rootReducer';
 
   import {     
-    SET_ANALYST_BARCHART_DATA, SET_ANALYST_CURRENT_COMPANY, SET_ANALYST_CURRENT_INDEX, SET_ANALYST_PAGINATION_INDEX,
+    SET_ANALYST_BARCHART_DATA, SET_ANALYST_CURRENT_COMPANY, SET_ANALYST_CURRENT_INDEX
    } from 'redux/stocks/stocksSlice';
 
 
@@ -62,7 +62,7 @@ function RENDER(props:any) {
     const ANALYST_CURRENT_COMPANY = useSelector((state:RootState) => state.stocks.ANALYST_CURRENT_COMPANY)
     const ANALYST_BARCHART_DATA = useSelector((state:RootState) => state.stocks.ANALYST_BARCHART_DATA)
     const COMPANY_ICON_BIN = useSelector((state:RootState) => state.stocks.COMPANY_ICON_BIN)
-    const ANALYST_PAGINATION_INDEX = useSelector((state:RootState) => state.stocks.ANALYST_PAGINATION_INDEX)
+    // const ANALYST_PAGINATION_INDEX = useSelector((state:RootState) => state.stocks.ANALYST_PAGINATION_INDEX)
 
     useEffect( () => {
       console.log("company", company)
