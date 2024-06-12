@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+// /dojo-img/shuriken.png
+
+$greystern: rgb(100,88,88);
+$coolgrey: rgb(168, 160, 160);
+$noto: "Noto Sans", sans-serif;
+$blackrevolver: rgba(0, 0, 0, 0.357);
+$gentlesharpie: rgba(0, 0, 0, 0.622);
+$slender: #dcdcdc;
+$andTall: #bcbcbc;
+
+#marketTableCont {
+    // border: 5px solid hotpink;
+    // width: 
+    margin: 0 2em;
+    padding: 10px; 
+    display: flex;
+    flex: 1;
+    // flex-direction: column;
+    justify-content: space-between;
+    align-items: center;  
+    // text-align: center;
+  }
+  
+  /* Style the table */
+  #marketTable {
+    flex: 1;
+    margin: 0 20px;
+    // width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+  }
+  
+  /* Style table header */
+  #th {
+    flex: 1;
+    // background-color: hotpink;
+    // color: white;
+    padding: 8px;
+    border-bottom: 1px solid $andTall;
+    text-align: center;
+    color: $slender;
+  }
+  
+  /* Style table cells */
+  #td {
+    // border: 1px solid hotpink;
+    padding: 8px;
+    text-align: center;
+    // color: orange;
+  }
+  
+  /* Style alternating rows */
+  #marketTable tr:nth-child(even) {
+    background-color: blue;
+  }
+  
